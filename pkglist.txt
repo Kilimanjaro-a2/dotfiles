@@ -23,6 +23,7 @@ otf-ipaexfont
 python-dbus-next
 qtile
 sudo
+ufw
 vim
 xclip
 xorg-server
