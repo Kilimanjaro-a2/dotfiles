@@ -15,6 +15,7 @@ kitty
 less
 linux
 linux-firmware
+make
 networkmanager
 noto-fonts
 openssh
