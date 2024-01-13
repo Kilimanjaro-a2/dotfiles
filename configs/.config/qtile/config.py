@@ -146,7 +146,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                # widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -160,10 +160,11 @@ screens = [
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
+                widget.Battery(format='⚡{percent: 2.0%}', foreground="ffff80"),
                 widget.Systray(),
-                widget.Volume(fmt="Vol: {}", volume_down_command="F3", volume_up_command="F4"),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.Volume(emoji=True, volume_down_command="F3", volume_up_command="F4"),
+                widget.Clock(format="🕒 %Y-%m-%d %a %I:%M %p"),
+                # widget.QuickExit(),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
