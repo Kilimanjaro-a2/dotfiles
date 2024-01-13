@@ -81,7 +81,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "12345"]
 
 for i in groups:
     keys.extend(
@@ -125,14 +125,14 @@ layouts = [
 
 widget_defaults = dict(
     font="sans",
-    fontsize=16,
-    padding=5,
+    fontsize=20,
+    padding=8,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
@@ -140,12 +140,12 @@ screens = [
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
+                        "launch": ("#4b0082", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # widget.TextBox("default config", name="default"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
