@@ -1,6 +1,12 @@
 base
 chromium
 efibootmgr
+fcitx5
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-mozc
+fcitx5-qt
+fcitx5-skk
 git
 gnome-terminal
 grub
