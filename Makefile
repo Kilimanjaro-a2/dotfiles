@@ -10,7 +10,7 @@ install-packages:
 
 define link-file
 	@mkdir -p $(dir $(HOME)/$(1))
-	@ln -sf $(CURDIR)/settings/$(1) $(HOME)/$(1)
+	@ln -sf $(CURDIR)/configs/$(1) $(HOME)/$(1)
 endef
 
 # Alias a configuration file
