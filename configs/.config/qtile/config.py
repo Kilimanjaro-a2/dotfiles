@@ -28,6 +28,13 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import os
+
+def increase_volume():
+    os.system("amixer set Master 5%+")
+
+def decrease_volume():
+    os.system("amixer set Master 5%-")
 
 mod = "mod4"
 # terminal = guess_terminal()
@@ -80,6 +87,11 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
+
+keys.extend([
+    Key([], "F3", lazy.function(decrease_volume)),
+    Key([], "F4", lazy.function(increase_volume))
+])
 
 groups = [Group(i) for i in "12345"]
 
@@ -149,6 +161,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
+                widget.Volume(fmt="Vol: {}", volume_down_command="F3", volume_up_command="F4"),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
             ],

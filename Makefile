@@ -1,11 +1,11 @@
-.PHONY: update-package-list install-packages link-configs
-
+.PHONY: update install link
+	
 # Update pkglist.txt to the current pacman installation
-update-package-list:
+update:
 	@pacman -Qqe > pkglist.txt
 
 # Install the packages listed in pkglist.txt
-install-packages:
+install:
 	@sudo pacman -S --needed - < pkglist.txt
 
 define link-file
@@ -14,7 +14,7 @@ define link-file
 endef
 
 # Alias a configuration file
-link-configs:
+link:
 	$(call link-file,.config/qtile/config.py)
 	$(call link-file,.config/kitty/kitty.conf)
 	$(call link-file,.xprofile)
