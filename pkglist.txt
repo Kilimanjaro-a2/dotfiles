@@ -8,6 +8,7 @@ fcitx5-gtk
 fcitx5-mozc
 fcitx5-qt
 fcitx5-skk
+feh
 git
 gnome-terminal
 grub
@@ -23,9 +24,12 @@ openssh
 otf-ipaexfont
 python-dbus-next
 qtile
+screenfetch
+scrot
 sudo
 ufw
 vim
+wget
 xclip
 xorg-server
 xorg-xinit
