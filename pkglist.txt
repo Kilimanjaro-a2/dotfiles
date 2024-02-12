@@ -18,6 +18,7 @@ less
 linux
 linux-firmware
 make
+man-db
 networkmanager
 noto-fonts
 openssh
@@ -27,6 +28,7 @@ qtile
 screenfetch
 scrot
 sudo
+tree
 ufw
 vim
 wget
